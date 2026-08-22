@@ -1,0 +1,12 @@
+pandas
+openpyxl
+pymupdf
+rank-bm25
+pytest
+langgraph
+google-genai
+groq
+python-dotenv
+fastapi
+uvicorn[standard]
+pydantic
