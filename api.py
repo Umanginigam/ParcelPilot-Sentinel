@@ -15,8 +15,17 @@ from src.llm import default_llm
 from src import proactive as P
 
 app = FastAPI(title="ParcelPilot Sentinel API")
-app.add_middleware(CORSMiddleware, allow_origins=["*"], allow_methods=["*"],
-                   allow_headers=["*"])
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=[
+        "https://parcel-pilot-sentinel.vercel.app",
+        "http://localhost:3000",
+        "http://127.0.0.1:3000",
+    ],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 _AGENT = build_agent(default_llm())      # one instance -> shared checkpointer
 
